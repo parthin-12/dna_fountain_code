@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/homepage.css">
+    <link rel="stylesheet" href="/static/aboutus.css">
+</head>
+<header>
+    <div id="divA">
+        <div class="wrapper">
+            <ul class="nav-area">
+                <li><a href="/">Home</a></li>
+                <li><a href="/glass">Fountain Code</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="desc">
+    <p>Data transmission from a single source to several consumers across a lossy network link is made possible by fountain codes.
+        Because fountain codes function similarly to a fountain, they are given the term "fountain codes." A file that is being sent 
+        is comparable to a fountain drink. To fill the glass (or rebuild the file), you must collect enough fountain droplets for your glass 
+        to fill up completely. The amount of water in your glass doesn't matter; once you have enough, the glass is full (and the file can be 
+        reconstructed).</p><br>
+
+    <p>Similar to fountain codes, but using information instead of water.The data being transported across the network can be algorithmically 
+        divided up into an infinite number of pieces, or droplets. To recreate the original file, the receiving client must then receive a certain amount of these droplets. 
+        It makes no difference which droplets are received, in what sequence they are received, or which are lost in the course of transmission. The appeal of fountain codes lies in this. 
+        The original file can be entirely recreated as long as enough droplets are received.</p><br>
+
+    <p>The fountain code seems to be the best option for users looking to download large files over a potentially unstable connection. 
+        The fountain code won't need to send confirmation bits indicating that packets have been received even if the connection is lost for a substantial period of time, which may be inevitable with peer-to-peer connections.
+The result is that a file distributor can start a connection with any user, and they can start spewing out droplets for a particular file; they are the fountain.If the client stops catching the droplets, another person in possession of the file can use the same algorithm to broadcast the file again without being aware of how much of it has already been received or which portions of the previous transmission were dropped.</p><br>
+    </div>
+</header>
+
+<script>
+    let x1=document.getElementsByClassName("nav-area")[0]
+    x1=x1.getElementsByTagName("a")[0].style.backgroundColor="#4CAF50"
+    </script>
+</html>

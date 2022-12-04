@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Data Visualizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/aboutus.css">
+    <link rel="stylesheet" href="/static/homepage.css"> 
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    
+
+</head>
+<body>
+    <header>
+      <div id="divA">
+      <div class="wrapper">
+  <ul class="nav-area">
+      <li><a href="/">Home</a></li>
+      <li><a href="/glass">Fountain Code</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+  </ul>
+  </div>
+  </div>
+  <div id="divB">
+    <h2 class="team-heading" style="text-align:center" >Team Members</h2>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="color: rgb(195, 205, 157);">Jaydip Parmar</h2>
+            <p class="title">201901160</p>
+            <p class="p">parmarjaydip6402@gmail.com</p>
+            <p><button class="btn" onclick="checked(0)">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="color: rgb(195, 205, 157);">Parthin Baraiya</h2>
+            <p class="title">201901113</p>
+            <p class="p">parthinbaraiya003@gmail.com</p>
+            <p><button class="btn" onclick="checked(1)">Contact</button></p>
+          </div>
+      </div>
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="color: rgb(195, 205, 157);">Omik Sanghani</h2>
+            <p class="title">201901010</p>
+            <p class="p">omikpatel10@gmail.com</p>
+            <p><button class="btn" onclick="checked(2)">Contact</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 style="color: rgb(195, 205, 157);">Utsav Hirpara</h2>
+            <p class="title">201901077</p>
+            <p class="p">utsavhirpara007@gmail.com</p>
+            <p><button class="btn" onclick="checked(3)">Contact</button></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </header>
+ 
+  <script>
+    let x1=document.getElementsByClassName("nav-area")[0]
+    x1=x1.getElementsByTagName("a")[2].style.backgroundColor="#4CAF50"
+    
+
+
+    let con=["9664712930","7623062400","9106730297","8200085521","9783891474","7489308609"]
+    function checked(s){
+          document.getElementsByClassName("btn")[s].innerText=con[s];
+    };
+    var header = document.getElementsByClassName("row")[0];
+    var btns = header.getElementsByClassName("btn");
+    console.log(btns.length);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+      });
+    }
+    </script>   
+       
+</body>
+</html>

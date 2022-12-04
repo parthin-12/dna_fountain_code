@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100&display=swap');
+        body {
+            background-color: rgb(28, 22, 22);
+            font-size: 20px;
+            color: white;
+        }
+
+        .title {
+            margin: 0;
+            padding-top: 5px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            color: darkseagreen;
+        }
+
+        .sub_title {
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(141, 71, 162);
+        }
+
+        .center_p {
+            margin: 0;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+        }
+
+        .right_p {
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            font-family: Arial;
+            color: white;
+        }
+
+        .for_chunks {
+            display: flex;
+            justify-content: flex-end;
+            color: rgb(133, 205, 230);
+        }
+
+        .title_chunk {
+            color: rgb(133, 205, 230);
+        }
+
+        p {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        a {
+            display: inline-block;
+            background-color: black;
+            padding: 0.5vmax 1vmax;
+            margin: 0.75vmax;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            width: 7vmax;
+            text-align: center;
+            transition: 0.5s;
+            box-shadow: 3px 2px rgb(68, 68, 68);
+            /* align-items: center; */
+        }
+
+        .region-first-child{
+            display: flex
+        }
+
+
+        a:hover {
+            background-color: white;
+            color: black;
+            border-color: aqua;
+            box-shadow: 3px 2px rgb(0, 132, 132);
+        }
+
+        .region {
+            margin: 5px;
+            border: solid;
+            padding: 3px;
+        }
+
+        .info {
+            margin: 5px;
+        }
+
+        .text,
+        .droplets {
+            overflow-y: scroll;
+            margin: 5px;
+        }
+
+        .text {
+            height: 350px;
+        }
+
+        .droplets {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<div class="region">
+    <div class="region-first-child" > 
+        <a href="/" style="width: 100px; height:50px;" onmouseover="mouseOver()" onmouseout="mouseOut()" ><i class="glyphicon glyphicon-arrow-left" style="color: white;font-size: 29px;"></i></a>
+        <div class="title" style="width: 85%;">Summary of Glass&nbsp;:&nbsp;<div class="title_chunk"><u>{{id}}</u></div>
+    </div>
+    </div>
+    <div class="for_chunks"><u>{{num_droplets}}</u>
+        <div class="right_p">&nbsp;:&nbsp;<div class="sub_title">droplets caught</div>
+        </div>
+    </div>
+    <div class="right_p">
+        <div class="for_chunks"><u>{{chunksCreated}}</u></div> &nbsp;of&nbsp;<div class="for_chunks">
+            <u>{{total_chunks}}</u></div>&nbsp; <div class="sub_title">chunks reconstructed</div>
+    </div>
+    <div class="info">
+        <div class="sub_title">Catch more droplets&nbsp;:<a href="/glass/{{id}}/fill/1">1</a> <a
+            href="/glass/{{id}}/fill/5">5</a><a
+                href="/glass/{{id}}/fill/10">10</a> <a
+                href="/glass/{{id}}/fill/50">50</a><a href="/glass/{{id}}/fill/100">100</a>
+                <a href="/glass/{{id}}/fill/500">500</a>
+                <a href="/glass/{{id}}/fill/1000">1000</a></div>
+    </div>
+</div>
+<div class="region">
+    <div class="title">Reconstruction of text</div>
+    <p class="text">{{text}}
+</div>
+<div class="region">
+    <div class="title">Droplets</div>
+    <div class="droplets">{%if droplets%}<table>{%for droplet in droplets%}<tr>
+                <td class="sub_title">Seed: <code style="color: white; background-color: transparent;">{{droplet.seed}}</code></td>
+                <td class="sub_title"> Data: <code style="color: white; background-color: transparent;">"{{droplet.data}}"</code></td>
+            </tr>
+            {%endfor%}{%else%}
+            None{%endif%}
+    </div>
+</div>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script>
+        function mouseOver() {
+          document.getElementsByClassName("glyphicon glyphicon-arrow-left")[0].style.color = "black";
+        }
+        
+        function mouseOut() {
+            document.getElementsByClassName("glyphicon glyphicon-arrow-left")[0].style.color = "white";
+        }
+    </script>
+
+</html>
